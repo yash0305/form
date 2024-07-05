@@ -49,7 +49,14 @@ const SecondPage: React.FC = () => {
         {loading ? (
           <Typography>Loading...</Typography>
         ) : (
-          <DataGrid rows={posts} columns={columns} pageSize={10} rowsPerPageOptions={[10]} />
+          <DataGrid rows={posts}
+          columns={columns}
+          pageSizeOptions={[10]}
+          initialState={{
+            pagination: {
+              paginationModel: { pageSize: 10 },
+            },
+          }} />
         )}
       </Box>
       <Typography variant="h4" gutterBottom>
